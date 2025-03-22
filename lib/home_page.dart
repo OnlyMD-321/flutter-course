@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'courses_page.dart';
+import 'bottom_navbar.dart';
 import 'profile_page.dart';
-import 'login_page.dart';
+import 'courses_page.dart';
+import 'todo_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,52 +15,55 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = [
     CoursesPage(),
     ProfilePage(),
+    ToDoPage(),
   ];
-
-  @override
-  void initState() {
-    super.initState();
-    _loadSelectedIndex();  // Load the last visited page index
-  }
-
-  void _loadSelectedIndex() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    int savedIndex = prefs.getInt('selectedIndex') ?? 0;  // Default to 0 (CoursesPage)
-    setState(() {
-      _selectedIndex = savedIndex;
-    });
-  }
-
-  void _saveSelectedIndex(int index) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setInt('selectedIndex', index);  // Save current page index
-  }
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
-    _saveSelectedIndex(index);  // Save the index when the user changes the page
+  }
+
+  void _logout() {
+    showDialog(
+      context: context,
+      builder: (_) => AlertDialog(
+        title: Text("Logout"),
+        content: Text("Are you sure you want to log out?"),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text("Cancel"),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text("Logout"),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex],  // Show the page based on selected index
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
+      body: _pages[_selectedIndex],
+      bottomNavigationBar: BottomNavBar(
+        selectedIndex: _selectedIndex,
         onTap: _onItemTapped,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'Courses',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
+        logout: _logout,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _onItemTapped(0),
+        child: Icon(Icons.home, size: 30, color: Colors.white),
+        backgroundColor: Colors.blue,
+        shape: CircleBorder(), // Ensures it's circular
+        elevation: 8, // Adds a nice shadow effect
+      ),
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

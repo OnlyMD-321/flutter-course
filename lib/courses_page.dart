@@ -6,85 +6,111 @@ class CoursesPage extends StatelessWidget {
     {
       'title': 'Flutter for Beginners',
       'image': '../assets/flutter.png',
-      'description': 'Learn the basics of Flutter and build your first app.',
-      'details': 'This course covers Dart, widgets, and state management for beginners.',
+      'description': 'Learn the basics of Flutter and build your first mobile application.',
+      'details': 'This course introduces the Dart programming language, Flutter widgets, and state management concepts. '
+          'You will learn how to structure a Flutter project, create UI components, and handle user interactions. '
+          'Additionally, the course covers navigation between screens and best practices for responsive design. '
+          'By the end of the course, you will have built a fully functional Flutter app from scratch. '
+          'Ideal for beginners with little or no mobile development experience.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=fq4N0hgOWzU',
     },
     {
       'title': 'Advanced Flutter Development',
       'image': '../assets/flutter_advanced.png',
-      'description': 'Master complex Flutter concepts like state management.',
-      'details': 'Explore Bloc, Provider, animations, and performance optimization.',
+      'description': 'Master complex Flutter concepts and improve your app development skills.',
+      'details': 'This course is designed for developers who have a basic understanding of Flutter and want to level up their skills. '
+          'It covers state management using Provider and Bloc, integrating Firebase for authentication and database management, '
+          'optimizing app performance, and using animations to enhance user experience. '
+          'Additionally, the course delves into testing strategies and debugging techniques. '
+          'By the end of the course, you will be able to build high-performance, scalable Flutter applications.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=1gDhl4leEzA',
     },
     {
       'title': 'React.js Essentials',
       'image': '../assets/reactjs.png',
-      'description': 'Develop modern web apps using React.js.',
-      'details': 'Learn React fundamentals, hooks, state management, and component lifecycle.',
+      'description': 'Develop modern web applications using React.js and its core concepts.',
+      'details': 'This course focuses on the fundamental concepts of React.js, including components, props, and state. '
+          'You will learn how to manage application state using hooks, handle events, and interact with APIs. '
+          'The course also covers the use of React Router for navigation and best practices for organizing components. '
+          'By the end of the course, you will have built a fully functional React application. '
+          'Perfect for front-end developers looking to transition into modern JavaScript frameworks.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=bMknfKXIFA8',
     },
     {
       'title': 'Full-Stack Web Development',
       'image': '../assets/web_dev.png',
-      'description': 'Become a full-stack developer with front & backend skills.',
-      'details': 'Covers HTML, CSS, JavaScript, React.js, and databases.',
+      'description': 'Become a full-stack developer with front-end and back-end skills.',
+      'details': 'This course provides a comprehensive introduction to full-stack web development. '
+          'It covers front-end technologies such as HTML, CSS, and JavaScript, as well as back-end development using Node.js and Express.js. '
+          'You will learn how to work with databases like MongoDB or PostgreSQL and how to implement authentication. '
+          'Additionally, the course includes a section on deployment, enabling you to take your applications live. '
+          'By the end of this course, you will have built a full-stack web application from scratch.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=nu_pCVPKzTk',
     },
     {
       'title': 'Backend Development with Node.js',
       'image': '../assets/nodejs.png',
       'description': 'Learn how to build scalable backend services using Node.js.',
-      'details': 'Includes Express.js, databases, authentication, and APIs.',
+      'details': 'This course covers the essentials of backend development using Node.js. '
+          'You will explore the Express.js framework to create RESTful APIs and learn how to integrate databases like MongoDB. '
+          'Topics include authentication using JWT, error handling, and middleware implementation. '
+          'The course also introduces microservices and best practices for scaling applications. '
+          'By the end of the course, you will be able to create and deploy robust backend systems.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=Oe421EPjeBE',
     },
     {
       'title': 'Mastering PHP',
       'image': '../assets/php.png',
-      'description': 'Build powerful web apps using PHP and MySQL.',
-      'details': 'Learn PHP fundamentals, OOP, authentication, and database interactions.',
+      'description': 'Build powerful web applications using PHP and MySQL.',
+      'details': 'This course teaches you how to develop dynamic web applications using PHP. '
+          'You will learn about PHP syntax, object-oriented programming, and working with MySQL databases. '
+          'Topics include form handling, user authentication, session management, and CRUD operations. '
+          'The course also covers security best practices to prevent SQL injection and XSS attacks. '
+          'By the end of the course, you will be able to create fully functional PHP web applications.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=OK_JCtrrv-c',
     },
     {
       'title': 'Laravel for Web Development',
       'image': '../assets/laravel.png',
-      'description': 'Create modern web apps with Laravel, the PHP framework.',
-      'details': 'Covers MVC architecture, authentication, APIs, and database migrations.',
+      'description': 'Create modern web applications using Laravel, the PHP framework.',
+      'details': 'This course focuses on Laravel, one of the most popular PHP frameworks. '
+          'You will learn about the MVC architecture, routing, database migrations, and Eloquent ORM. '
+          'Topics include authentication, middleware, API development, and working with Blade templates. '
+          'The course also covers deployment strategies for Laravel applications. '
+          'By the end of the course, you will have built a fully functional Laravel-based web application.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=ImtZ5yENzgE',
-    },
-    {
-      'title': 'UI/UX Design for Developers',
-      'image': '../assets/uiux.png',
-      'description': 'Understand UI/UX principles to create user-friendly interfaces.',
-      'details': 'Focus on wireframing, typography, colors, and accessibility.',
-      'youtubeUrl': 'https://www.youtube.com/watch?v=3QjLeVtVf6o',
     },
     {
       'title': 'Cloud Computing with AWS',
       'image': '../assets/aws.png',
       'description': 'Learn cloud infrastructure and AWS services for scalability.',
-      'details': 'Covers EC2, S3, Lambda, IAM, and serverless architecture.',
+      'details': 'This course introduces cloud computing and how AWS provides scalable solutions. '
+          'You will learn about EC2 for virtual machines, S3 for storage, and IAM for user access control. '
+          'Other topics include AWS Lambda for serverless computing and API Gateway for managing APIs. '
+          'The course also covers AWS best practices, cost optimization, and security measures. '
+          'By the end of the course, you will be proficient in deploying and managing applications on AWS.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=ulprqHHWlng',
     },
     {
       'title': 'Data Structures & Algorithms',
       'image': '../assets/dsa.png',
-      'description': 'Master problem-solving skills with DSA.',
-      'details': 'Covers arrays, linked lists, trees, graphs, sorting & searching algorithms.',
+      'description': 'Master problem-solving skills with Data Structures & Algorithms.',
+      'details': 'This course covers fundamental data structures such as arrays, linked lists, stacks, and queues. '
+          'You will learn about searching and sorting algorithms, including binary search and quicksort. '
+          'Topics include graph algorithms, dynamic programming, and algorithmic complexity analysis. '
+          'The course emphasizes coding problems and interview preparation techniques. '
+          'By the end of this course, you will have a solid foundation in DSA for coding interviews and problem-solving.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=8hly31xKli0',
-    },
-    {
-      'title': 'DevOps & CI/CD',
-      'image': '../assets/devops.png',
-      'description': 'Automate deployment with DevOps best practices.',
-      'details': 'Includes Docker, Kubernetes, CI/CD pipelines, and monitoring tools.',
-      'youtubeUrl': 'https://www.youtube.com/watch?v=VQTFmdI8KPA',
     },
     {
       'title': 'Cybersecurity & Ethical Hacking',
       'image': '../assets/cybersecurity.png',
       'description': 'Learn ethical hacking and cybersecurity fundamentals.',
-      'details': 'Covers penetration testing, network security, and vulnerability analysis.',
+      'details': 'This course introduces cybersecurity concepts, including threat analysis and network security. '
+          'You will learn about penetration testing, ethical hacking tools, and vulnerability assessments. '
+          'The course covers topics such as password cracking, web security, and social engineering attacks. '
+          'Hands-on exercises will help you understand how to secure systems from potential threats. '
+          'By the end of the course, you will have foundational skills to pursue cybersecurity certifications.',
       'youtubeUrl': 'https://www.youtube.com/watch?v=3Kq1MIfTWCE',
     },
   ];

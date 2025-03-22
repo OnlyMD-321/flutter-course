@@ -14,6 +14,24 @@ class _LoginPageState extends State<LoginPage> {
   bool _passwordVisible = false;
   bool _rememberMe = false;
 
+  @override
+  void initState() {
+    super.initState();
+    _emailController.addListener(_updateButtonState);
+    _passwordController.addListener(_updateButtonState);
+  }
+
+  void _updateButtonState() {
+    setState(() {}); // Rebuild UI when input fields change
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
+
   Future<bool> _authenticateUser(String email, String password) async {
     await Future.delayed(Duration(seconds: 2));
     return email == "mouad.omlil@ynov.com" && password == "password123";
@@ -67,12 +85,12 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Image.asset(
-                      '../assets/logo.png', height: 60),
+                  Image.asset('../assets/logo.png', height: 60),
                   SizedBox(height: 10),
                   Text("Welcome Back!", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                   SizedBox(height: 20),
 
+                  // Email Field
                   TextFormField(
                     controller: _emailController,
                     keyboardType: TextInputType.emailAddress,
@@ -91,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 16),
 
+                  // Password Field
                   TextFormField(
                     controller: _passwordController,
                     obscureText: !_passwordVisible,
@@ -113,6 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 16),
 
+                  // Remember Me Checkbox
                   Row(
                     children: [
                       Checkbox(
@@ -126,10 +146,11 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: 20),
 
+                  // Login Button
                   _isLoading
                       ? CircularProgressIndicator()
                       : ElevatedButton(
-                    onPressed: _emailController.text.isEmpty || _passwordController.text.isEmpty ? null : _login,
+                    onPressed: (_emailController.text.isNotEmpty && _passwordController.text.isNotEmpty) ? _login : null,
                     child: Text("Login"),
                     style: ElevatedButton.styleFrom(
                       minimumSize: Size(double.infinity, 50),
